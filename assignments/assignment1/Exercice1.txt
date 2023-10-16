@@ -1,0 +1,12 @@
+[ ~]$ vim my_job.sh
+[ ~]$ cat my_job.sh
+#!/bin/bash
+#SBATCH --job-name=my_job
+#SBATCH --output=output.txt
+
+echo "Hello, SLURM!" > output.txt
+[ ~]$ sbatch my_job.sh
+Submitted batch job 5842405
+[ ~]$ cat output.txt
+Hello, SLURM!
+[ ~]$

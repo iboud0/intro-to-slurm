@@ -1,0 +1,28 @@
+[ ~]$ vim job_a.sh
+[ ~]$ cat job_a.sh
+#!/bin/bash
+#SBATCH --job-name=JobA
+#SBATCH --output=job_a.out
+
+python -c "from Exercice4 import delta; print(delta(1, -3, 2))"
+[ ~]$ vim job_b.sh
+
+[ ~]$ cat job_b.sh
+#!/bin/bash
+#SBATCH --job-name=JobB
+#SBATCH --output=job_b.out
+#SBATCH --dependency=afterok:jobid_of_JobA
+
+python -c "from your_script import print_roots; print_roots(1, -3, 2)"
+[ ~]$ sbatch job_a.sh
+Submitted batch job 5842757
+[ ~]$ vim job_b.sh
+[ ~]$ cat job_b.sh
+#!/bin/bash
+#SBATCH --job-name=JobB
+#SBATCH --output=job_b.out
+#SBATCH --dependency=afterok:5842757
+
+python -c "from your_script import print_roots; print_roots(1, -3, 2)"
+[ ~]$ sbatch job_b.sh
+Submitted batch job 5842764

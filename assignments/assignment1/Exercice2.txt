@@ -1,0 +1,18 @@
+[ ~]$ vim resource_alloc.sh
+[ ~]$ cat resource_alloc.sh
+#!/bin/bash
+#SBATCH --job-name=resource_allocation
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=4G
+[ ~]$ sbatch resource_alloc.sh
+Submitted batch job 5842499
+[ ~]$ scontrol show job 5842499
+JobId=5842499 JobName=resource_allocation
+   ***
+   NumNodes=1 NumCPUs=4 NumTasks=0 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=4,mem=4G,node=1,billing=4
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=4G MinTmpDiskNode=0
+   ***
+
+[ ~]$
