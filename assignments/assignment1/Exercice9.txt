@@ -1,0 +1,8 @@
+[ ~]$ salloc --partition=gpu --cpus-per-task=2 --mem=4G
+salloc: Granted job allocation 5844439
+[ ~]$ echo "This is an interactive session on the compute node."
+This is an interactive session on the compute node.
+[ ~]$ exit
+exit
+salloc: Relinquishing job allocation 5844439
+[ ~]$

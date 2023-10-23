@@ -1,0 +1,46 @@
+[ ~]$ vim exercice6.sh
+[ ~]$ sbatch exercice6.sh
+Submitted batch job 5844436
+[ ~]$ cat output.log
+This is a sample job.
+Job encountered an error.
+[ ~]$ cat error.log
+[ ~]$ cat exercice6.sh
+#!/bin/bash
+#SBATCH --job-name=my_job
+#SBATCH --output=output.log
+#SBATCH --error=error.log
+
+echo "This is a sample job."
+
+false
+
+if [ $? -eq 0 ]; then
+    echo "Job completed successfully." #debugging
+else
+    echo "Job encountered an error."
+fi
+[ ~]$ vim exercice6.sh
+[ ~]$ cat exercice6.sh
+#!/bin/bash
+#SBATCH --job-name=my_job
+#SBATCH --output=output.log
+#SBATCH --error=error.log
+
+echo "This is a sample job."
+
+hzergj #non existing command
+
+if [ $? -eq 0 ]; then
+    echo "Job completed successfully."
+else
+    echo "Job encountered an error."
+fi
+[ ~]$ sbatch exercice6.sh
+Submitted batch job 5844437
+[ ~]$ cat output.log
+This is a sample job.
+Job encountered an error.
+[ ~]$ cat error.log
+/cm/local/apps/slurm/var/spool/job5844437/slurm_script: line 8: hzergj: command not found
+[ ~]$

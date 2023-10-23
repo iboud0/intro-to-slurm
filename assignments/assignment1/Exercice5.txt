@@ -1,0 +1,16 @@
+[ ~]$ vim exercice5.sh
+[ ~]$ cat exercice5.sh
+#!/bin/bash
+#SBATCH --job-name=long_running_job
+#SBATCH --time=5:00
+
+sleep 600
+[ ~]$ sbatch exercice5.sh
+Submitted batch job 5844435
+[ ~]$ squeue -u ilyas.boudhaine
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           5844435      defq long_run ilyas.bo  R       0:14      1 node15
+[ ~]$ squeue -u ilyas.boudhaine
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           5844435      defq long_run ilyas.bo  R       0:29      1 node15
+[ ~]$

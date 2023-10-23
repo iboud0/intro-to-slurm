@@ -1,0 +1,6 @@
+[ ~]$ sacct -j 5844436
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+5844436          my_job       defq sccs-dna-+          1  COMPLETED      0:0
+5844436.bat+      batch            sccs-dna-+          1  COMPLETED      0:0
+[ ~]$

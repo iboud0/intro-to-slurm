@@ -1,0 +1,7 @@
+[ ~]$ sinfo --format="%N %t %C"
+NODELIST STATE CPUS(A/I/O/T)
+node09 drain 0/0/44/44
+node[02,07-08,10-13,15,17],visu01 mix 267/169/0/436
+node[01,04-05,14] alloc 172/0/0/172
+node[03,06,16] idle 0/132/0/132
+[ ~]$
